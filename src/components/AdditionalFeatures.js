@@ -1,6 +1,7 @@
 import React from 'react';
 import AdditionalFeature from './AdditionalFeature';
 
+
 const AdditionalFeatures = props => {
   return (
     <div className="content">
@@ -8,7 +9,7 @@ const AdditionalFeatures = props => {
       {props.additionalFeatures.length ? (
         <ol type="1">
           {props.additionalFeatures.map(item => (
-            <AdditionalFeature key={item.id} feature={item} />
+            <AdditionalFeature key={item.id} feature={item} addFeature={() => props.addFeature(item)} />
           ))}
         </ol>
       ) : (
@@ -17,5 +18,6 @@ const AdditionalFeatures = props => {
     </div>
   );
 };
+
 
 export default AdditionalFeatures;
